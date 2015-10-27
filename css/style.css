@@ -1,0 +1,134 @@
+body {
+	padding-top: 70px;        
+}
+
+.navbar-inverse {
+  background-color: #439bad;
+  border: none;
+}
+
+.navbar-header a.navbar-brand {
+	color: #fff;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h1, h2 {
+	color: #439bad;
+	font-weight: 100;
+	text-align: center;
+}
+
+h1 span {
+	color: #b1d5dc;
+	font-weight: 500;
+}
+
+.grid {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.grid figure.effect-up {
+	position: relative;
+	/* ↓↓↓ important to get the effect ↓↓↓ */
+	overflow: hidden; 
+	width: 100%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure.effect-up img {	
+	opacity: 0.8;
+}
+
+.grid figure.effect-up h2, .grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+figure.effect-up p.description { /* get on focus web development */
+	width: 100%; /* to get center aligned its needed to apply width */
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: 8em;
+	color: #fff;
+	text-transform: none;
+	font-size: 80%; /* important to make use of % */
+	font-weight: 100;
+	/* ↓↓↓ important - opacity to get the effect ↓↓↓ */
+	opacity: 0;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+	-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+}
+
+.grid figure.effect-up figcaption {
+	position: absolute;		
+	width: 100%;
+	/* top: auto; */
+	bottom: 0;
+	left: 0;
+	padding: 1em;
+	height: 3.75em;
+	color: #3c4a50;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;	
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+figure.effect-up h2  { /* get on focus h2 tag*/
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,200%,0);
+	transform: translate3d(0,200%,0);
+}
+
+figure.effect-up:hover p.description {
+	opacity: 1;
+
+}
+
+figure.effect-up:hover figcaption,
+figure.effect-up:hover h2 {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-up:hover h2 {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+@media screen and (max-width: 50em) {
+	
+	.grid figure {
+		display: inline-block;
+		float: none;
+		margin: 10px auto;
+		width: 100%;
+	}
+	figure.effect-up:hover p.description {
+	opacity: 1;
+	bottom: 5em;
+	}
+	figure.effect-up:hover h2 {
+		font-size: 16px;
+		padding: 10px;
+	}
+}
+
+
